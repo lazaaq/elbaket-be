@@ -13,19 +13,16 @@ class QuizTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        $categories = array('Astronomi', 'Biologi', 'Ekonomi', 'Fisika', 'Geografi', 'Kebumian', 'Kimia', 'Komputer', 'Matematika');
-        $types = array('Kota-Kabupaten', 'Provinsi', 'Nasional');
+        $categories = array('Elbaket');
+        $types = array('Bahasa Korea Level Dasar', 'Bahasa Korea Level 1', 'Bahasa Korea Level 2', 'Bahasa Korea Level 3');
         for($i=0; $i<count($categories); $i++) {
             for($j=0; $j<count($types); $j++) { // tingkat kota, provinsi, nasional
                 QuizType::create([
                     'quiz_category_id' => ($i+1),
-                    'name' => $types[$j] . ' ' . $categories[$i],
-                    'description' => $types[$j] . ' ' . $categories[$i],
+                    'name' => $types[$j],
+                    'description' => $types[$j],
                     'pic_url' => $types[$j] . '.png',
-                    'created_by' => 1,
-                    'created_at' => '2019-12-18 11:19:58',
-                    'updated_at' => '2019-12-18 11:19:58',
-                    'deleted_at' => NULL,
+                    'created_by' => 1
                 ]);
             }
         }

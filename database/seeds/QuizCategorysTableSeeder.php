@@ -13,7 +13,7 @@ class QuizCategorysTableSeeder extends Seeder
      */
     public function run()
     {
-        $categories = array('Astronomi', 'Biologi', 'Ekonomi', 'Fisika', 'Geografi', 'Kebumian', 'Kimia', 'Komputer', 'Matematika');
+        $categories = array('Elbaket');
         for($i=0; $i<count($categories); $i++) {
             QuizCategory::create([
                 'name' => $categories[$i],

@@ -13,8 +13,8 @@ class QuizsTableSeeder extends Seeder
      */
     public function run()
     {
-        $categories = array('Astronomi', 'Biologi', 'Ekonomi', 'Fisika', 'Geografi', 'Kebumian', 'Kimia', 'Komputer', 'Matematika');
-        $types = array('Kota/Kabupaten', 'Provinsi', 'Nasional');
+        $categories = array('Elbaket');
+        $types = array('Bahasa Korea Level Dasar', 'Bahasa Korea Level 1', 'Bahasa Korea Level 2', 'Bahasa Korea Level 3');
         $quizPerType = 3;
 
         for($i=0; $i<count($categories); $i++) {
