@@ -16,7 +16,7 @@ class Material extends Model
         return $this->hasOne(MaterialMedia::class);
     }
 
-    public function quiztype() {
+    public function quizType() {
         return $this->belongsTo(QuizType::class);
     }
 

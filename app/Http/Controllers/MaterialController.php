@@ -13,8 +13,10 @@ class MaterialController extends Controller
     }
 
     public function api_show($quiz_type_id) {
-        $materials = Material::with('media', 'module', 'quiz')->where('quiz_type_id', $quiz_type_id)->get();
-        return responseAPI(200, true, $materials);
+        $material = Material::with('media', 'module', 'quiz', 'quiztype.quizCategory')->find($quiz_type_id);
+        $materials = Material::where('quiz_type_id', $material['quiz_type_id'])->get()->sortBy('id');
+        $material['materials'] = $materials;
+        return responseAPI(200, true, $material);
     }
     
     public function api_store(Request $request) {
