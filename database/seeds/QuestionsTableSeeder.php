@@ -15,9 +15,10 @@ class QuestionsTableSeeder extends Seeder
     {
         $categories = array('Elbaket');
         $types = array('Bahasa Korea Level Dasar', 'Bahasa Korea Level 1', 'Bahasa Korea Level 2', 'Bahasa Korea Level 3');
+        $questionsPerQuiz = 5;
         for($i=0; $i<count($categories); $i++) {
             for($j=0; $j<count($types); $j++) {
-                for($k=0; $k<5; $k++) {
+                for($k=0; $k<$questionsPerQuiz; $k++) {
                     Question::create([
                         'quiz_id' => ($i)*3 + ($j+1),
                         'question' => 'Q' . ($k+1),

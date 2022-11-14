@@ -22,21 +22,17 @@ class DatabaseSeeder extends Seeder
 
         $admin = User::create([
             'name'      => 'Developer',
-            'username'  => 'developer',
             'email'     => 'developer@dev.com',
             'password'  =>  bcrypt('devpass'),
-            'picture'   => 'avatar.png',
-            'school_id' => 123
+            'picture'   => 'avatar.png'
         ]);
         $admin->assignRole('admin');
 
         $teacher = User::create([
             'name'      => 'Teacher Dev',
-            'username'  => 'teacherdev',
             'email'     => 'teacher@dev.com',
             'password'  =>  bcrypt('devpass'),
-            'picture'   => 'avatar.png',
-            'school_id' => 123
+            'picture'   => 'avatar.png'
         ]);
         $teacher->assignRole('teacher');
         Lecture::create([
@@ -45,11 +41,9 @@ class DatabaseSeeder extends Seeder
 
         $student = User::create([
             'name'      => 'Student Dev',
-            'username'  => 'studentdev',
             'email'     => 'student@dev.com',
             'password'  =>  bcrypt('devpass'),
-            'picture'   => 'avatar.png',
-            'school_id' => 123
+            'picture'   => 'avatar.png'
         ]);
         $student->assignRole('student');
         Collager::create([
@@ -61,10 +55,10 @@ class DatabaseSeeder extends Seeder
         $this->call(QuizsTableSeeder::class);
         $this->call(QuestionsTableSeeder::class);
         $this->call(AnswersTableSeeder::class);
-        $this->call(SchoolsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(MaterialTableSeeder::class);
         $this->call(QuizTemporaryTableSeeder::class);
+        $this->call(HistoryTableSeeder::class);
 
         // custom
         School::find(123)->update([
