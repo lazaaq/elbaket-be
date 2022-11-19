@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Material;
 use App\QuizCollager;
+use App\QuizType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,5 +46,11 @@ class MaterialController extends Controller
 
     public function api_destroy($id) {
         //
+    }
+
+    public function api_summary() {
+        $quizTypes = QuizType::with('material')->get();
+
+        return responseAPI(200, true, $quizTypes);
     }
 }

@@ -27,7 +27,7 @@ class QuizType extends Model
 
     public function material()
     {
-        return $this->hasOne(Material::class);
+        return $this->hasMany(Material::class);
     }
 
     // accessor

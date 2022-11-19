@@ -68,6 +68,7 @@ Route::group(['middleware' => ['auth:api'],'prefix' => '/collager'], function ()
   Route::get('/history/{quiz_collager_id}', [HistoryController::class, 'api_detailHistory']);
   Route::get('/history/{quiz_collager_id}/result', [HistoryController::class, 'api_result']);
 
+  Route::get('/material/summary', [MaterialController::class, 'api_summary']);
   Route::get('/material/{quiz_type_id}', [MaterialController::class, 'api_show']);
 });
 
