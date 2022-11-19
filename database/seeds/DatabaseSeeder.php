@@ -58,11 +58,5 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(MaterialTableSeeder::class);
         $this->call(QuizTemporaryTableSeeder::class);
-        $this->call(HistoryTableSeeder::class);
-
-        // custom
-        School::find(123)->update([
-            'category' => 'SMA'
-        ]);
     }
 }

@@ -19,7 +19,13 @@ class MaterialTableSeeder extends Seeder
         $quizTypes = QuizType::with('quiz')->get();
         $countQuizTypes = count($quizTypes);
 
-        $materials = array(
+        $materialsName = array(
+            "1과 Bab 1",
+            "2과 Bab 2",
+            "3과 Bab 3",
+            "4과 Bab 4"
+        );
+        $materialsDescription = array(
             array(
                 "Huruf Korea '한글'",
                 "Angka Korea '숫자'",
@@ -46,12 +52,12 @@ class MaterialTableSeeder extends Seeder
         );
 
         for($i=0; $i<$countQuizTypes; $i++) {
-            for($j=0; $j<count($materials[$i]); $j++) {
+            for($j=0; $j<count($materialsDescription[$i]); $j++) {
                 $material = Material::create([
                     'quiz_type_id' => $i + 1,
                     'quiz_id' => 1,
-                    'name' => 'Material name for ' . $quizTypes[$i]['name'] . " " . ($j + 1),
-                    'description' => 'Material name for ' . $quizTypes[$i]['description'],
+                    'name' => $materialsName[$j],
+                    'description' => $materialsDescription[$i][$j],
                 ]);
                 
                 MaterialModule::create([
