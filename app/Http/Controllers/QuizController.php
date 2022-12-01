@@ -158,7 +158,6 @@ class QuizController extends Controller
           if (!empty($validation)) {
             $code = strtoupper(substr(md5(microtime()),rand(0,26),5));
           } else {
-            $code = $code;
           }
         } else {
           $code = NULL;
@@ -278,7 +277,6 @@ class QuizController extends Controller
             if (!empty($validation)) {
               $code = strtoupper(substr(md5(microtime()),rand(0,26),5));
             } else {
-              $code = $code;
             }
         } else {
           $code = $request->code_container;

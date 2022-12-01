@@ -30,7 +30,6 @@ class ReportingController extends Controller
             if ($key < 1) {
                 $i = $key+2;
             } else {
-                $i = $i;
             }
             $sheet->setCellValue('A'.$i, $value->name);
             $sheet->setCellValue('B'.$i, $value->school->name);
@@ -78,7 +77,6 @@ class ReportingController extends Controller
             if ($key < 1) {
                 $i = $key+2;
             } else {
-                $i = $i;
             }
             $sheet->setCellValue('A'.$i, $value->name);
             $sheet->setCellValue('B'.$i, $value->school->name);
